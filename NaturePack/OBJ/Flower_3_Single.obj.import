@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxp3njbldi2x0"
+path="res://.godot/imported/Flower_3_Single.obj-334ef4e117c80e7fe30f78209059d858.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flower_3_Single.obj-334ef4e117c80e7fe30f78209059d858.mesh"]
+
+source_file="res://NaturePack/OBJ/Flower_3_Single.obj"
+dest_files=["res://.godot/imported/Flower_3_Single.obj-334ef4e117c80e7fe30f78209059d858.mesh", "res://.godot/imported/Flower_3_Single.obj-334ef4e117c80e7fe30f78209059d858.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

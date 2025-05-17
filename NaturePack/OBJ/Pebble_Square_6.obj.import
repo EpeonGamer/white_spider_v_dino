@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1dhty5ing3qf"
+path="res://.godot/imported/Pebble_Square_6.obj-01f1810ff97256fc296363fe379b9ea8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pebble_Square_6.obj-01f1810ff97256fc296363fe379b9ea8.mesh"]
+
+source_file="res://NaturePack/OBJ/Pebble_Square_6.obj"
+dest_files=["res://.godot/imported/Pebble_Square_6.obj-01f1810ff97256fc296363fe379b9ea8.mesh", "res://.godot/imported/Pebble_Square_6.obj-01f1810ff97256fc296363fe379b9ea8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

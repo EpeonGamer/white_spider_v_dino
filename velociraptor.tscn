@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5r0k4sqfwv6a"]
+
+[ext_resource type="PackedScene" uid="uid://hlbiu6q0cbyv" path="res://Dinosaur Animated Pack - Dec 2018/FBX/Velociraptor.fbx" id="1_j5tex"]
+[ext_resource type="Script" path="res://velociraptor.gd" id="2_mxfgj"]
+
+[node name="Velociraptor" instance=ExtResource("1_j5tex")]
+script = ExtResource("2_mxfgj")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/position = Vector3(0.000308162, 0.0425102, 0.0104287)
+bones/1/rotation = Quaternion(0.0110151, -2.14939e-27, 2.44584e-18, 0.999939)
+bones/2/position = Vector3(-0.00203985, -0.0124127, 0.00873753)
+bones/2/rotation = Quaternion(0.102483, -0.102479, 0.699643, 0.699639)
+bones/3/rotation = Quaternion(-0.642588, 0.676992, 0.240456, -0.266353)
+bones/4/rotation = Quaternion(-0.347169, -0.0277093, -0.111091, 0.930787)
+bones/5/rotation = Quaternion(0.647559, 0.0560881, 0.065578, 0.757114)
+bones/7/position = Vector3(-0.00261441, -0.0141689, -0.010734)
+bones/7/rotation = Quaternion(0.0727363, -0.0727365, 0.703356, 0.703356)
+bones/8/rotation = Quaternion(0.726823, -0.67237, 0.0913134, -0.10634)
+bones/9/rotation = Quaternion(-0.196595, 0.00822132, 0.0398777, 0.979639)
+bones/11/position = Vector3(0.00142352, -0.0130046, 0.0103559)
+bones/11/rotation = Quaternion(0.701104, 0.7011, 0.0919522, -0.0919564)
+bones/12/rotation = Quaternion(-0.223065, -0.293029, 0.648831, 0.665878)
+bones/13/rotation = Quaternion(-0.357834, 0.0593128, 0.122569, 0.923804)
+bones/14/rotation = Quaternion(0.739983, -0.0640955, -0.0577795, 0.667067)
+bones/16/position = Vector3(0.00199809, -0.0152658, -0.00922573)
+bones/16/rotation = Quaternion(0.704723, 0.704724, 0.0580039, -0.0580041)
+bones/17/rotation = Quaternion(0.098465, 0.0997376, 0.725793, 0.673485)
+bones/18/rotation = Quaternion(-0.493843, 0.0132367, -0.0355841, 0.868722)
+bones/20/position = Vector3(0.00474191, -0.0145477, -0.00956241)
+bones/21/rotation = Quaternion(0.0635016, -7.13812e-07, 4.54203e-08, 0.997982)
+bones/22/rotation = Quaternion(-0.070573, 1.18912e-07, -8.41296e-09, 0.997507)
+bones/23/rotation = Quaternion(0.0888281, -1.18739e-07, 1.06018e-08, 0.996047)
+bones/24/rotation = Quaternion(0.10677, 3.32429e-13, -2.90286e-11, 0.994284)
+bones/25/rotation = Quaternion(0.162038, 1.17637e-07, 1.93309e-08, 0.986785)
+bones/27/rotation = Quaternion(2.25514e-07, 0.718787, 0.695231, 2.18123e-07)
+bones/28/rotation = Quaternion(0.179333, 0.000479239, -0.0376085, 0.983069)
+bones/29/rotation = Quaternion(0.1991, 0.034376, 0.0467073, 0.978262)
+bones/30/position = Vector3(2.23517e-10, 0.00718135, -1.69501e-09)
+bones/30/rotation = Quaternion(0.00136761, -0.0349477, -0.0287869, 0.998974)
+bones/31/rotation = Quaternion(-0.462438, -0.227982, 0.123185, 0.847939)
+bones/33/rotation = Quaternion(0.707107, -6.38043e-07, -9.41061e-07, 0.707107)
+bones/35/rotation = Quaternion(0.707107, -1.12673e-06, -1.12673e-06, 0.707107)
+
+[node name="idle_timer" type="Timer" parent="." index="2"]
+wait_time = 2.5
+
+[connection signal="timeout" from="idle_timer" to="." method="_on_idle_timer_timeout"]

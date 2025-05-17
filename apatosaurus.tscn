@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk42k04oobidv"]
+
+[ext_resource type="PackedScene" uid="uid://1r7ae0124owr" path="res://Dinosaur Animated Pack - Dec 2018/FBX/Apatosaurus.fbx" id="1_kr2w1"]
+[ext_resource type="Script" path="res://apatosaurus.gd" id="2_plqp7"]
+
+[node name="Apatosaurus" instance=ExtResource("1_kr2w1")]
+script = ExtResource("2_plqp7")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/position = Vector3(0.000308162, 0.0425102, -0.000349975)
+bones/1/rotation = Quaternion(0.0110151, -2.14939e-27, 2.44584e-18, 0.999939)
+bones/2/position = Vector3(-0.00214519, -0.0197328, -0.0078819)
+bones/2/rotation = Quaternion(0.0179153, -0.0179156, 0.70688, 0.70688)
+bones/3/rotation = Quaternion(0.742977, -0.664777, -0.0547004, 0.0553566)
+bones/4/rotation = Quaternion(0.371402, 0.0164061, 0.0537756, 0.926768)
+bones/6/position = Vector3(0.00152886, -0.0198268, -0.00789267)
+bones/6/rotation = Quaternion(0.706879, 0.706879, 0.0179578, -0.0179628)
+bones/7/rotation = Quaternion(-0.0473668, -0.0618914, 0.743478, 0.664204)
+bones/8/rotation = Quaternion(0.37547, -0.00756284, -0.0573941, 0.925025)
+bones/10/position = Vector3(-0.000322827, -0.016281, -0.0083276)
+bones/10/rotation = Quaternion(-0.751586, 4.71808e-07, -5.37577e-07, 0.659635)
+bones/11/rotation = Quaternion(-0.336033, -0.00103241, 0.00911509, 0.941805)
+bones/12/rotation = Quaternion(0.416007, -0.00317428, -0.0049124, 0.909343)
+bones/13/rotation = Quaternion(0.383703, -0.000651201, -0.000697629, 0.923456)
+bones/14/rotation = Quaternion(0.223987, -0.00161233, -0.00107501, 0.97459)
+bones/15/rotation = Quaternion(0.226505, -0.00193967, -0.00168782, 0.974007)
+bones/17/rotation = Quaternion(6.37301e-07, 0.621685, 0.783267, 5.14189e-07)
+bones/18/rotation = Quaternion(0.0329516, 0.0151673, -0.027118, 0.998974)
+bones/19/rotation = Quaternion(-0.121423, -0.020777, 0.032513, 0.991851)
+bones/20/position = Vector3(0.00104437, 0.0297095, 0.0165098)
+bones/20/rotation = Quaternion(0.360614, -0.00082807, -0.0217623, 0.932461)
+bones/21/rotation = Quaternion(-0.227402, -0.252239, 0.0595636, 0.938678)
+bones/23/position = Vector3(-0.00115281, -0.0255635, 0.0174586)
+bones/23/rotation = Quaternion(-3.30215e-07, -1.91921e-07, 0.707107, 0.707107)
+bones/24/rotation = Quaternion(0.68959, -0.63046, 0.242222, -0.26137)
+bones/25/rotation = Quaternion(-0.33104, 0.0184373, 0.0526461, 0.941967)
+bones/27/position = Vector3(0.000536487, -0.0255635, 0.0174586)
+bones/27/rotation = Quaternion(0.707107, 0.707107, -1.43204e-07, -2.33424e-07)
+bones/28/rotation = Quaternion(0.172723, 0.182026, 0.713469, 0.654214)
+bones/29/rotation = Quaternion(-0.536546, -0.00296077, -0.0571219, 0.84193)
+bones/31/position = Vector3(-0.00769344, 0.000861704, -0.016983)
+bones/31/rotation = Quaternion(0.707107, -1.14381e-06, -1.44682e-06, 0.707107)
+bones/33/position = Vector3(0.00769344, 0.000861704, -0.0171127)
+bones/33/rotation = Quaternion(0.707107, -1.45575e-06, -1.80923e-06, 0.707107)
+bones/35/position = Vector3(-0.00353738, 0.000861704, 0.00870486)
+bones/35/rotation = Quaternion(0.707107, -1.4639e-06, -1.4639e-06, 0.707107)
+bones/37/position = Vector3(0.0035374, 0.000861692, 0.0157317)
+bones/37/rotation = Quaternion(0.707107, -1.80108e-06, -1.80108e-06, 0.707107)
+
+[node name="idle_timer" type="Timer" parent="." index="2"]
+
+[connection signal="timeout" from="idle_timer" to="." method="_on_idle_timer_timeout"]

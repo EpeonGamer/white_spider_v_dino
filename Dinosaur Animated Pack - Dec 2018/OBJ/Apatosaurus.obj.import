@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cche0l5fhf0cx"
+path="res://.godot/imported/Apatosaurus.obj-f49494115f5ca65416f629a24bd30358.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Apatosaurus.obj-f49494115f5ca65416f629a24bd30358.mesh"]
+
+source_file="res://Dinosaur Animated Pack - Dec 2018/OBJ/Apatosaurus.obj"
+dest_files=["res://.godot/imported/Apatosaurus.obj-f49494115f5ca65416f629a24bd30358.mesh", "res://.godot/imported/Apatosaurus.obj-f49494115f5ca65416f629a24bd30358.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

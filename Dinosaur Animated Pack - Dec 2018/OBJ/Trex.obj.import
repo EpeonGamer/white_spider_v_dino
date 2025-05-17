@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bq60rqlw8odd"
+path="res://.godot/imported/Trex.obj-5b066ad6802a24b0b90eff885b09eaf5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Trex.obj-5b066ad6802a24b0b90eff885b09eaf5.mesh"]
+
+source_file="res://Dinosaur Animated Pack - Dec 2018/OBJ/Trex.obj"
+dest_files=["res://.godot/imported/Trex.obj-5b066ad6802a24b0b90eff885b09eaf5.mesh", "res://.godot/imported/Trex.obj-5b066ad6802a24b0b90eff885b09eaf5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

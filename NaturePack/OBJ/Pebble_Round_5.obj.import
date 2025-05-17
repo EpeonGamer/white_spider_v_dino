@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://but3ayv50obww"
+path="res://.godot/imported/Pebble_Round_5.obj-94b9b1f5cd1538c1ec42516d03fdb268.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pebble_Round_5.obj-94b9b1f5cd1538c1ec42516d03fdb268.mesh"]
+
+source_file="res://NaturePack/OBJ/Pebble_Round_5.obj"
+dest_files=["res://.godot/imported/Pebble_Round_5.obj-94b9b1f5cd1538c1ec42516d03fdb268.mesh", "res://.godot/imported/Pebble_Round_5.obj-94b9b1f5cd1538c1ec42516d03fdb268.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

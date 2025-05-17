@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cpk7lh74dwhqb"
+path="res://.godot/imported/Velociraptor.obj-a677935b01a6cbe12c7ba31a7005b66b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Velociraptor.obj-a677935b01a6cbe12c7ba31a7005b66b.mesh"]
+
+source_file="res://Dinosaur Animated Pack - Dec 2018/OBJ/Velociraptor.obj"
+dest_files=["res://.godot/imported/Velociraptor.obj-a677935b01a6cbe12c7ba31a7005b66b.mesh", "res://.godot/imported/Velociraptor.obj-a677935b01a6cbe12c7ba31a7005b66b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

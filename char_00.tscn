@@ -1,22 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkn8staofq040"]
+[gd_scene load_steps=6 format=3 uid="uid://dkn8staofq040"]
 
 [ext_resource type="Script" path="res://char_00.gd" id="1_pur6x"]
 [ext_resource type="Texture2D" uid="uid://dg5yx2kpxhd16" path="res://pixil-frame-0.png" id="2_1cr23"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iswua"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_nitjo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_j686k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7lw3o"]
+size = Vector3(0.2, 0.2, 1)
 
 [node name="char_00" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_pur6x")
 
 [node name="char_coll" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_iswua")
+shape = SubResource("SphereShape3D_nitjo")
 
-[node name="char_cam_00" type="Camera3D" parent="."]
+[node name="mesh" type="MeshInstance3D" parent="char_coll"]
+mesh = SubResource("SphereMesh_j686k")
+
+[node name="tail_temp" type="MeshInstance3D" parent="char_coll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9)
+mesh = SubResource("BoxMesh_7lw3o")
+
+[node name="cam_pivot_h" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="Control" type="Control" parent="char_cam_00"]
+[node name="cam_pivot_v" type="Node3D" parent="cam_pivot_h"]
+unique_name_in_owner = true
+
+[node name="char_cam_00" type="Camera3D" parent="cam_pivot_h/cam_pivot_v"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
+
+[node name="Control" type="Control" parent="cam_pivot_h/cam_pivot_v/char_cam_00"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="char_cam_00/Control"]
+[node name="CenterContainer" type="CenterContainer" parent="cam_pivot_h/cam_pivot_v/char_cam_00/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="char_cam_00/Control/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="cam_pivot_h/cam_pivot_v/char_cam_00/Control/CenterContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_1cr23")

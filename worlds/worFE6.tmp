@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cgiddahh5k26l"]
+[gd_scene load_steps=101 format=3 uid="uid://cgiddahh5k26l"]
 
 [ext_resource type="PackedScene" uid="uid://bppf2i7aoeaa0" path="res://Forest_Kit/Meshes/Artists_Conk_Big.fbx" id="1_ggot2"]
 [ext_resource type="Script" path="res://worlds/world_00.gd" id="1_xyojj"]
@@ -134,10 +134,6 @@ albedo_color = Color(0.370131, 0.406781, 0.302906, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_q88dh"]
 material = SubResource("StandardMaterial3D_ukc1w")
 size = Vector3(32, 8, 32)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_d53y8"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_rks6a"]
 
 [node name="world_00" type="Node3D"]
 script = ExtResource("1_xyojj")
@@ -551,30 +547,3 @@ shape = SubResource("BoxShape3D_x31th")
 [node name="mesh" type="MeshInstance3D" parent="terrain2/cliff_ramp/coll"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_q88dh")
-
-[node name="box" type="StaticBody3D" parent="terrain2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 14)
-
-[node name="coll" type="CollisionShape3D" parent="terrain2/box"]
-shape = SubResource("BoxShape3D_d53y8")
-
-[node name="mesh" type="MeshInstance3D" parent="terrain2/box/coll"]
-mesh = SubResource("BoxMesh_rks6a")
-
-[node name="box2" type="StaticBody3D" parent="terrain2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 15)
-
-[node name="coll" type="CollisionShape3D" parent="terrain2/box2"]
-shape = SubResource("BoxShape3D_d53y8")
-
-[node name="mesh" type="MeshInstance3D" parent="terrain2/box2/coll"]
-mesh = SubResource("BoxMesh_rks6a")
-
-[node name="box3" type="StaticBody3D" parent="terrain2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 15)
-
-[node name="coll" type="CollisionShape3D" parent="terrain2/box3"]
-shape = SubResource("BoxShape3D_d53y8")
-
-[node name="mesh" type="MeshInstance3D" parent="terrain2/box3/coll"]
-mesh = SubResource("BoxMesh_rks6a")

@@ -5,7 +5,6 @@ extends Node3D
 func _ready() -> void:
 	$AnimationPlayer.play("Armature|Velociraptor_Idle")
 	$idle_timer.start(0.1)
-	print("test")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

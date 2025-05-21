@@ -12,12 +12,14 @@ const JUMP_VELOCITY := 8.0  # higher pop
 const FALL_MULTIPLIER := 2.0  # faster descent
 const LOW_JUMP_MULTIPLIER := 2.0  # short-hop effect
 
-const fall_mod := 2.0 # lift factor while gliding
+const FALL_MOD := 2.0 # lift factor while gliding
 const FLAP_VELOCITY := 8.0
 const AIR_SPEED_CONTROL := 2.5
 const TERMINAL_VELOCITY := -2.0
 var is_gliding := false
 var has_jumped := false
+
+@onready var interact_area: Area3D = $interact_area
 
 
 func _physics_process(delta: float) -> void:
@@ -25,9 +27,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		if is_gliding:
 			if velocity.y < 0:
-				velocity.y -= GRAVITY * FALL_MULTIPLIER * (1.0/fall_mod) * delta
+				velocity.y -= GRAVITY * FALL_MULTIPLIER * (1.0/FALL_MOD) * delta
 			else:
-				velocity.y -= GRAVITY * (1.0/fall_mod) * delta
+				velocity.y -= GRAVITY * (1.0/FALL_MOD) * delta
 			velocity.y = max(velocity.y, TERMINAL_VELOCITY)  # Optional terminal velocity
 		elif velocity.y < 0:
 			velocity.y -= GRAVITY * FALL_MULTIPLIER * delta
@@ -81,3 +83,17 @@ func _input(event):
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			Input.MOUSE_MODE_VISIBLE:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	if Input.is_action_just_pressed("interact"):
+		if interact_area.get_overlapping_bodies():
+			var closest : Node3D =  get_closest(global_position, interact_area.get_overlapping_bodies())
+			if closest.has_method("interact"):
+				closest.interact()
+
+
+func get_closest(target : Vector3, positions : Array):
+	var closest : Node3D = positions[0]
+	for i : Node3D in positions:
+		if i.global_position.distance_squared_to(target) >= closest.global_position.distance_squared_to(target):
+			closest = i
+	return closest

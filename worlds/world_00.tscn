@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cgiddahh5k26l"]
+[gd_scene load_steps=106 format=3 uid="uid://cgiddahh5k26l"]
 
 [ext_resource type="PackedScene" uid="uid://bppf2i7aoeaa0" path="res://Forest_Kit/Meshes/Artists_Conk_Big.fbx" id="1_ggot2"]
 [ext_resource type="Script" path="res://worlds/world_00.gd" id="1_xyojj"]
@@ -86,6 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://dccwpf2yiaxen" path="res://NaturePack/FBX/DeadTree_4.fbx" id="91_wvf5e"]
 [ext_resource type="PackedScene" uid="uid://33yi5siwsmsp" path="res://NaturePack/FBX/DeadTree_2.fbx" id="92_8f5n1"]
 [ext_resource type="PackedScene" uid="uid://b8bbipf8t5sl7" path="res://NaturePack/FBX/Petal_5.fbx" id="92_ou1kh"]
+[ext_resource type="Script" path="res://worlds/burrow.gd" id="92_tkcae"]
 [ext_resource type="PackedScene" uid="uid://dd8loig2h8uy4" path="res://NaturePack/FBX/Pebble_Round_4.fbx" id="93_lmngg"]
 [ext_resource type="PackedScene" uid="uid://bavcqaanwlni5" path="res://NaturePack/FBX/Mushroom_Common.fbx" id="94_a4h8i"]
 [ext_resource type="PackedScene" uid="uid://dk42k04oobidv" path="res://apatosaurus.tscn" id="96_olobm"]
@@ -138,6 +139,10 @@ size = Vector3(32, 8, 32)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d53y8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rks6a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ri1ih"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_abu2c"]
 
 [node name="world_00" type="Node3D"]
 script = ExtResource("1_xyojj")
@@ -549,7 +554,6 @@ transform = Transform3D(0.836516, 0.224144, 0.5, -0.258819, 0.965926, 3.8567e-09
 shape = SubResource("BoxShape3D_x31th")
 
 [node name="mesh" type="MeshInstance3D" parent="terrain2/cliff_ramp/coll"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_q88dh")
 
 [node name="box" type="StaticBody3D" parent="terrain2"]
@@ -578,3 +582,16 @@ shape = SubResource("BoxShape3D_d53y8")
 
 [node name="mesh" type="MeshInstance3D" parent="terrain2/box3/coll"]
 mesh = SubResource("BoxMesh_rks6a")
+
+[node name="terrain3" type="Node3D" parent="."]
+
+[node name="burrow" type="StaticBody3D" parent="terrain3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 26)
+collision_layer = 3
+script = ExtResource("92_tkcae")
+
+[node name="coll" type="CollisionShape3D" parent="terrain3/burrow"]
+shape = SubResource("SphereShape3D_ri1ih")
+
+[node name="mesh" type="MeshInstance3D" parent="terrain3/burrow/coll"]
+mesh = SubResource("SphereMesh_abu2c")

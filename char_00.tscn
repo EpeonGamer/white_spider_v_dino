@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkn8staofq040"]
+[gd_scene load_steps=7 format=3 uid="uid://dkn8staofq040"]
 
 [ext_resource type="Script" path="res://char_00.gd" id="1_pur6x"]
 [ext_resource type="Texture2D" uid="uid://dg5yx2kpxhd16" path="res://pixil-frame-0.png" id="2_1cr23"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_7lw3o"]
 size = Vector3(0.2, 0.2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rahs4"]
+radius = 1.0
 
 [node name="char_00" type="CharacterBody3D"]
 script = ExtResource("1_pur6x")
@@ -53,3 +56,11 @@ grow_vertical = 2
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_1cr23")
+
+[node name="interact_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+collision_layer = 0
+collision_mask = 2
+
+[node name="coll" type="CollisionShape3D" parent="interact_area"]
+shape = SubResource("SphereShape3D_rahs4")

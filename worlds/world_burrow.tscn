@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6rhuntfu8ol7"]
+
+[ext_resource type="PackedScene" uid="uid://dkn8staofq040" path="res://char_00.tscn" id="1_4abom"]
+[ext_resource type="Script" path="res://worlds/exit.gd" id="1_5ji4t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_802ff"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s1rht"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_14qsa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibu00"]
+albedo_color = Color(0.265361, 0.265361, 0.265361, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_uwqsk"]
+material = SubResource("StandardMaterial3D_ibu00")
+
+[node name="world_burrow" type="Node3D"]
+
+[node name="wall" type="StaticBody3D" parent="."]
+
+[node name="coll" type="CollisionShape3D" parent="wall"]
+shape = SubResource("BoxShape3D_802ff")
+
+[node name="mesh" type="MeshInstance3D" parent="wall/coll"]
+mesh = SubResource("BoxMesh_s1rht")
+
+[node name="wall4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.8, 0)
+
+[node name="coll" type="CollisionShape3D" parent="wall4"]
+shape = SubResource("BoxShape3D_802ff")
+
+[node name="mesh" type="MeshInstance3D" parent="wall4/coll"]
+mesh = SubResource("BoxMesh_s1rht")
+
+[node name="wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.4, -5.5)
+
+[node name="coll" type="CollisionShape3D" parent="wall2"]
+shape = SubResource("BoxShape3D_802ff")
+
+[node name="mesh" type="MeshInstance3D" parent="wall2/coll"]
+mesh = SubResource("BoxMesh_s1rht")
+
+[node name="wall3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.4, 5.5)
+
+[node name="coll" type="CollisionShape3D" parent="wall3"]
+shape = SubResource("BoxShape3D_802ff")
+
+[node name="mesh" type="MeshInstance3D" parent="wall3/coll"]
+mesh = SubResource("BoxMesh_s1rht")
+
+[node name="wall5" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 5.5, 5.4, 2.40413e-07)
+
+[node name="coll" type="CollisionShape3D" parent="wall5"]
+shape = SubResource("BoxShape3D_802ff")
+
+[node name="mesh" type="MeshInstance3D" parent="wall5/coll"]
+mesh = SubResource("BoxMesh_s1rht")
+
+[node name="wall6" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -5.5, 5.4, -2.40413e-07)
+
+[node name="coll" type="CollisionShape3D" parent="wall6"]
+shape = SubResource("BoxShape3D_802ff")
+
+[node name="mesh" type="MeshInstance3D" parent="wall6/coll"]
+mesh = SubResource("BoxMesh_s1rht")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+light_color = Color(0.580474, 0.405046, 0.197407, 1)
+light_energy = 7.0
+omni_range = 20.0
+
+[node name="exit" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.7, -4.7)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_5ji4t")
+
+[node name="coll" type="CollisionShape3D" parent="exit"]
+shape = SubResource("SphereShape3D_14qsa")
+
+[node name="mesh" type="MeshInstance3D" parent="exit/coll"]
+mesh = SubResource("SphereMesh_uwqsk")
+
+[node name="char_00" parent="." instance=ExtResource("1_4abom")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
